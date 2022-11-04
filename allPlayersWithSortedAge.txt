@@ -1,0 +1,5 @@
+exports = function(){
+  
+    var collection = context.services.get("mongodb-atlas").db("footballDB").collection("football_stats");
+    return collection.aggregate([{ "$match": {age: {"$lte":20} } }, {"$sort": {age: 1}} ])
+};

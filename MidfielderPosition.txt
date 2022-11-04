@@ -1,0 +1,6 @@
+exports = function(){
+  
+    var collection = context.services.get("mongodb-atlas").db("footballDB").collection("football_stats");
+    var result = collection.find({positionText: "Midfielder"})
+  return result
+};
